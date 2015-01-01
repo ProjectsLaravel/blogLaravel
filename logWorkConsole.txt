@@ -38,6 +38,10 @@ php artisan migrate:make create-users-table
 php artisan migrate
 php artisan db:seed
 
+/*Modify logic DB beacuse 1 user have many posts, many posts have 1 user && 1 post have many commnets and 1 comment have 1 post*/
+
+
+
 
 
 

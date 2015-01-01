@@ -5,6 +5,11 @@ class Post extends Eloquent
 
     protected $fillable = ['title', 'content'];
 
+    public function post()
+    {
+        return $this->belongsTo('User');
+    }
+
     public function comments()
     {
         return $this->hasMany('Comment');

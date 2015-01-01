@@ -11,14 +11,22 @@ class PostCommentSeeder extends Seeder {
                     mauris justo volutpat elit, 
                     eget accumsan nulla nisi ut nisi. Etiam non convallis ligula. Nulla urna augue, 
                     dignissim ac semper in, ornare ac mauris. Duis nec felis mauris.';
+        
+        $user = new User();
+        $user->username = "ezeezegg";
+        $user->full_name = "Ezequiel Garcia";
+        $user->email = "ezeezegg@gmail.com";
+        $user->password = Hash::make('admin');
+        $user->save();
+
         for( $i = 1 ; $i <= 20 ; $i++ )
         {
             $post = new Post;
             $post->title = "Post no $i";
             $post->read_more = substr($content, 0, 120);
             $post->content = $content;
-            $post->save();
- 
+            $user->posts()->save($post); 
+
             $maxComments = mt_rand(3,15);
             for( $j = 1 ; $j <= $maxComments; $j++)
             {
