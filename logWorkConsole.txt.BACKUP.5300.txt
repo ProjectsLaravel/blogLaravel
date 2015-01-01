@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+
+=======
 follow these steps for configure the project
+>>>>>>> origin/master
 
 /*create Project BlogLaravel*/
 composer create-project laravel/laravel users --prefer-dist
