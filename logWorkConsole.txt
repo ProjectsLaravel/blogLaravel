@@ -1,4 +1,4 @@
-cd /Applications/XAMPP/xamppfiles/htdocs
+
 
 /*create Project BlogLaravel*/
 composer create-project laravel/laravel users --prefer-dist
