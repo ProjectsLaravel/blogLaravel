@@ -27,6 +27,19 @@ php artisan generate:model Comment
 
 php artisan db:seed
 
+/*create branch auth on git for athentication users*/
+
+git branch auth
+git checkout auth
+
+/*on this branch create table users and fill up*/
+
+php artisan migrate:make create-users-table
+php artisan migrate
+php artisan db:seed
+
+
+
 
 
 
