@@ -1,0 +1,33 @@
+cd /Applications/XAMPP/xamppfiles/htdocs
+
+/*create Project BlogLaravel*/
+composer create-project laravel/laravel users --prefer-dist
+
+/*Configure GIT*/
+ls
+git init
+git status
+git commit -m "Initial Project blog with Laravel"
+git commit -a -m "Initial Project blog with Laravel"
+git remote add YourReporGitHub
+git push origin master
+
+/*Migrations*/
+php artisan migrate:make create-posts-table
+php artisan migrate:make create_comments_table
+php artisan migrate
+
+
+/*add waygenerators for models*/
+
+php artisan generate:model Post
+php artisan generate:model Comment
+
+//after made PostCommentSeeder call
+
+php artisan db:seed
+
+
+
+
+
