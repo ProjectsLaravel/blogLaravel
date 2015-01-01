@@ -1,4 +1,4 @@
-cd /Applications/XAMPP/xamppfiles/htdocs
+follow these steps for configure the project
 
 /*create Project BlogLaravel*/
 composer create-project laravel/laravel users --prefer-dist
