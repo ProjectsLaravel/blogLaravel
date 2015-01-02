@@ -38,7 +38,7 @@ class PostController extends BaseController
     /* post functions */
     public function savePost()
     {
-        $post = [
+        $data = [
             'title' => Input::get('title'),
             'content' => Input::get('content'),
         ];
@@ -46,12 +46,15 @@ class PostController extends BaseController
             'title' => 'required',
             'content' => 'required',
         ];
-        $valid = Validator::make($post, $rules);
+        $valid = Validator::make($data, $rules);
         if ($valid->passes())
         {
-            $post = new Post($post);
+            $post = new Post();
+            $post->user_id = 1;
+            $post->title =$data['title'];
+            $post->content = $data['content'];
             $post->comment_count = 0;
-            $post->read_more = (strlen($post->content) > 120) ? substr($post->content, 0, 120) : $post->content;
+            $post->read_more = (substr($post->content, 0, 120));
             $post->save();
             return Redirect::to('admin/dash-board')->with('success', 'Post is saved!');
         }
